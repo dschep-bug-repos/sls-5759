@@ -42,8 +42,9 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    SERVICE: ${self:service}
+    STAGE: ${opt:stage, self:provider.stage}
 
 # you can add packaging information here
 #package:
