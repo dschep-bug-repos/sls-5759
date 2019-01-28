@@ -43,7 +43,7 @@ provider:
 
 # you can define service wide environment variables here
   environment:
-    SERVICE: ${self:service}
+    SERVICE: ${self:service.name}
     STAGE: ${opt:stage, self:provider.stage}
 
 # you can add packaging information here
