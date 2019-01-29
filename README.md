@@ -5,7 +5,7 @@ $ sls version
 1.36.3
 $ grep -v -e '^\s*$' -e '^\s*#' serverless.yml
 service:
-  name: sls-5759
+  name: sls-5759-${file(other.yml):foo, "wat"}
 provider:
   name: aws
   runtime: nodejs8.10
@@ -17,14 +17,13 @@ functions:
     handler: handler.hello
 $ sls print
 service:
-  name: sls-5759
+  name: sls-5759-wat
 provider:
   name: aws
   runtime: nodejs8.10
   environment:
-    SERVICE: sls-5759
+    SERVICE: wat
     STAGE: dev
 functions:
   hello:
     handler: handler.hello
-```

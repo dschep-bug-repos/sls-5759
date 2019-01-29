@@ -12,7 +12,7 @@
 # Happy Coding!
 
 service:
-  name: sls-5759-${file(other.yml):foo, ""}
+  name: sls-5759-${file(other.yml):foo, "wat"}
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
