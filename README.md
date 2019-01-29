@@ -5,7 +5,7 @@ $ sls version
 1.36.3
 $ grep -v -e '^\s*$' -e '^\s*#' serverless.yml
 service:
-  name: sls-5759-${file(other.yml):foo, "wat"}
+  name: sls-5759-${self:custom.foo, "wat"}
 provider:
   name: aws
   runtime: nodejs8.10
@@ -27,3 +27,4 @@ provider:
 functions:
   hello:
     handler: handler.hello
+```
